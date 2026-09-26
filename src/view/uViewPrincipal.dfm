@@ -1,7 +1,7 @@
-object Form1: TForm1
+object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'MeuERP - Sistema de Gest'#227'o'
   ClientHeight = 441
   ClientWidth = 624
   Color = clBtnFace
@@ -10,5 +10,7 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
+  WindowState = wsMaximized
   TextHeight = 15
 end
