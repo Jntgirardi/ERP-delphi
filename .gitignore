@@ -1,0 +1,59 @@
+# ==============================================================================
+# Delphi GitIgnore - Enterprise Configuration
+# ==============================================================================
+
+# Compiled binaries and intermediate units
+*.dcu
+*.dcp
+*.bpi
+*.bpl
+*.lib
+*.a
+*.o
+*.obj
+
+# Executables & dynamic libraries generated
+*.exe
+*.dll
+*.so
+*.dylib
+*.apk
+*.aab
+
+# Debug & symbol files
+*.rsm
+*.map
+*.drc
+*.tds
+*.jdbg
+
+# Delphi local user and temporary files
+*.~*
+*.identcache
+*.stat
+*.local
+*.tvsconfig
+*.dproj.local
+*.cbproj.local
+*.groupproj.local
+
+# Delphi auto-recovery and file history
+__recovery/
+__history/
+
+# Output directories
+bin/*
+!bin/.gitkeep
+dcu/*
+!dcu/.gitkeep
+Win32/
+Win64/
+Debug/
+Release/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
