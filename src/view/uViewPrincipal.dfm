@@ -14,6 +14,28 @@ object frmPrincipal: TfrmPrincipal
   Position = poScreenCenter
   WindowState = wsMaximized
   TextHeight = 15
+  object stbPrincipal: TStatusBar
+    Left = 0
+    Top = 422
+    Width = 624
+    Height = 19
+    Panels = <
+      item
+        Text = 'Operador: Administrador'
+        Width = 200
+      end
+      item
+        Text = 'Banco de Dados: SQLite (Desconectado)'
+        Width = 250
+      end
+      item
+        Text = 'Vers'#227'o: 1.0.0'
+        Width = 150
+      end>
+    ExplicitLeft = 320
+    ExplicitTop = 240
+    ExplicitWidth = 0
+  end
   object mmPrincipal: TMainMenu
     Left = 304
     Top = 224
