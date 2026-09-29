@@ -36,6 +36,30 @@ object frmPrincipal: TfrmPrincipal
     ExplicitTop = 240
     ExplicitWidth = 0
   end
+  object pnlMenuLateral: TPanel
+    Left = 0
+    Top = 0
+    Width = 200
+    Height = 422
+    Align = alLeft
+    BevelOuter = bvNone
+    TabOrder = 1
+    ExplicitLeft = -6
+    ExplicitTop = -6
+  end
+  object pnlCentral: TPanel
+    Left = 200
+    Top = 0
+    Width = 424
+    Height = 422
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 2
+    ExplicitLeft = 232
+    ExplicitTop = 232
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+  end
   object mmPrincipal: TMainMenu
     Left = 304
     Top = 224
