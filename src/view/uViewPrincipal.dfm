@@ -33,9 +33,6 @@ object frmPrincipal: TfrmPrincipal
         Text = 'Vers'#227'o: 1.0.0'
         Width = 150
       end>
-    ExplicitLeft = 320
-    ExplicitTop = 240
-    ExplicitWidth = 0
   end
   object pnlMenuLateral: TPanel
     Left = 0
@@ -45,8 +42,6 @@ object frmPrincipal: TfrmPrincipal
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitLeft = -6
-    ExplicitTop = -6
     object pnlLogo: TPanel
       Left = 0
       Top = 0
@@ -71,6 +66,8 @@ object frmPrincipal: TfrmPrincipal
       Align = alTop
       Caption = #55357#56421' Clientes'
       TabOrder = 1
+      OnClick = btnClientesClick
+      ExplicitTop = 54
     end
     object btnProdutos: TButton
       Left = 0
@@ -99,7 +96,6 @@ object frmPrincipal: TfrmPrincipal
       Caption = #55357#57002' Sair do Sistema'
       TabOrder = 4
       OnClick = menuCadSairClick
-      ExplicitTop = 397
     end
   end
   object pnlCentral: TPanel
@@ -110,8 +106,6 @@ object frmPrincipal: TfrmPrincipal
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 2
-    ExplicitLeft = 206
-    ExplicitTop = -6
   end
   object mmPrincipal: TMainMenu
     Left = 304
@@ -120,6 +114,7 @@ object frmPrincipal: TfrmPrincipal
       Caption = '&Cadastros'
       object menuCadClientes: TMenuItem
         Caption = '&Clientes'
+        OnClick = menuCadClientesClick
       end
       object menuCadProdutos: TMenuItem
         Caption = '&Produtos'

@@ -29,6 +29,8 @@ type
     btnSair: TButton;
     procedure menuCadSairClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure btnClientesClick(Sender: TObject);
+    procedure menuCadClientesClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,7 +44,17 @@ implementation
 
 {$R *.dfm}
 
-uses uDMConexao;
+uses uDMConexao, uViewClientes;
+
+procedure TfrmPrincipal.btnClientesClick(Sender: TObject);
+begin
+  Application.CreateForm(TfrmClientes, frmClientes);
+  try
+    frmClientes.ShowModal;
+  finally
+    FreeAndNil(frmClientes);
+  end;
+end;
 
 procedure TfrmPrincipal.FormCreate(Sender: TObject);
 begin
@@ -50,6 +62,11 @@ begin
     stbPrincipal.Panels[1].Text := 'Banco de Dados: SQLite (Conectado)'
   else
     stbPrincipal.Panels[1].Text := 'Banco de Dados: Desconectado';
+end;
+
+procedure TfrmPrincipal.menuCadClientesClick(Sender: TObject);
+begin
+  btnClientesClick(Sender);
 end;
 
 procedure TfrmPrincipal.menuCadSairClick(Sender: TObject);

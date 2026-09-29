@@ -3,7 +3,8 @@ program MeuERP;
 uses
   Vcl.Forms,
   uDMConexao in 'src\dao\uDMConexao.pas' {dmConexao: TDataModule},
-  uViewPrincipal in 'src\view\uViewPrincipal.pas' {frmPrincipal};
+  uViewPrincipal in 'src\view\uViewPrincipal.pas' {frmPrincipal},
+  uViewClientes in 'src\view\uViewClientes.pas' {frmClientes};
 
 {$R *.res}
 
