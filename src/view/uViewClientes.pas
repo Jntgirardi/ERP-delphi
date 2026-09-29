@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ExtCtrls, Vcl.StdCtrls;
 
 type
   TfrmClientes = class(TForm)
@@ -13,6 +13,13 @@ type
     pgcPrincipal: TPageControl;
     tabConsulta: TTabSheet;
     tabDados: TTabSheet;
+    btnNovo: TButton;
+    btnEditar: TButton;
+    btnSalvar: TButton;
+    btnCancelar: TButton;
+    btnExcluir: TButton;
+    btnFechar: TButton;
+    procedure btnFecharClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -25,5 +32,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmClientes.btnFecharClick(Sender: TObject);
+begin
+  Close;
+end;
 
 end.

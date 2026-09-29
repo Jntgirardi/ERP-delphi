@@ -36,7 +36,68 @@ object frmClientes: TfrmClientes
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitTop = 50
+    ExplicitTop = 452
+    object btnNovo: TButton
+      Left = 0
+      Top = 0
+      Width = 80
+      Height = 50
+      Align = alLeft
+      Caption = 'Novo'
+      TabOrder = 0
+    end
+    object btnEditar: TButton
+      Left = 80
+      Top = 0
+      Width = 80
+      Height = 50
+      Align = alLeft
+      Caption = 'Editar'
+      TabOrder = 1
+    end
+    object btnSalvar: TButton
+      Left = 160
+      Top = 0
+      Width = 80
+      Height = 50
+      Align = alLeft
+      Caption = 'Salvar'
+      TabOrder = 2
+      ExplicitLeft = 336
+      ExplicitTop = 16
+      ExplicitHeight = 25
+    end
+    object btnCancelar: TButton
+      Left = 240
+      Top = 0
+      Width = 80
+      Height = 50
+      Align = alLeft
+      Caption = 'Cancelar'
+      TabOrder = 3
+    end
+    object btnExcluir: TButton
+      Left = 320
+      Top = 0
+      Width = 80
+      Height = 50
+      Align = alLeft
+      Caption = 'Excluir'
+      TabOrder = 4
+    end
+    object btnFechar: TButton
+      Left = 670
+      Top = 0
+      Width = 80
+      Height = 50
+      Align = alRight
+      Caption = 'Fechar'
+      TabOrder = 5
+      OnClick = btnFecharClick
+      ExplicitLeft = 336
+      ExplicitTop = 16
+      ExplicitHeight = 25
+    end
   end
   object pgcPrincipal: TPageControl
     Left = 0
