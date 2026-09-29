@@ -46,6 +46,60 @@ object frmPrincipal: TfrmPrincipal
     TabOrder = 1
     ExplicitLeft = -6
     ExplicitTop = -6
+    object pnlLogo: TPanel
+      Left = 0
+      Top = 0
+      Width = 200
+      Height = 60
+      Align = alTop
+      BevelOuter = bvNone
+      Caption = 'Meu ERP'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+    end
+    object btnClientes: TButton
+      Left = 0
+      Top = 60
+      Width = 200
+      Height = 40
+      Align = alTop
+      Caption = #55357#56421' Clientes'
+      TabOrder = 1
+    end
+    object btnProdutos: TButton
+      Left = 0
+      Top = 100
+      Width = 200
+      Height = 40
+      Align = alTop
+      Caption = #55357#56550' Produtos'
+      TabOrder = 2
+    end
+    object btnVendas: TButton
+      Left = 0
+      Top = 140
+      Width = 200
+      Height = 40
+      Align = alTop
+      Caption = #55357#57042' Vendas / Pedidos'
+      TabOrder = 3
+    end
+    object btnSair: TButton
+      Left = 0
+      Top = 382
+      Width = 200
+      Height = 40
+      Align = alBottom
+      Caption = #55357#57002' Sair do Sistema'
+      TabOrder = 4
+      OnClick = menuCadSairClick
+      ExplicitTop = 397
+    end
   end
   object pnlCentral: TPanel
     Left = 200
@@ -55,10 +109,8 @@ object frmPrincipal: TfrmPrincipal
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 2
-    ExplicitLeft = 232
-    ExplicitTop = 232
-    ExplicitWidth = 185
-    ExplicitHeight = 41
+    ExplicitLeft = 206
+    ExplicitTop = -6
   end
   object mmPrincipal: TMainMenu
     Left = 304

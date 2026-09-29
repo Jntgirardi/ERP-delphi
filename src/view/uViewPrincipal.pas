@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ComCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ComCtrls, Vcl.ExtCtrls,
+  Vcl.StdCtrls;
 
 type
   TfrmPrincipal = class(TForm)
@@ -21,6 +22,11 @@ type
     stbPrincipal: TStatusBar;
     pnlMenuLateral: TPanel;
     pnlCentral: TPanel;
+    pnlLogo: TPanel;
+    btnClientes: TButton;
+    btnProdutos: TButton;
+    btnVendas: TButton;
+    btnSair: TButton;
     procedure menuCadSairClick(Sender: TObject);
   private
     { Private declarations }
