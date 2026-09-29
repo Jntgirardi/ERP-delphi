@@ -28,6 +28,7 @@ type
     btnVendas: TButton;
     btnSair: TButton;
     procedure menuCadSairClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,6 +41,16 @@ var
 implementation
 
 {$R *.dfm}
+
+uses uDMConexao;
+
+procedure TfrmPrincipal.FormCreate(Sender: TObject);
+begin
+  if Assigned(dmConexao) and dmConexao.FDConn.Connected then
+    stbPrincipal.Panels[1].Text := 'Banco de Dados: SQLite (Conectado)'
+  else
+    stbPrincipal.Panels[1].Text := 'Banco de Dados: Desconectado';
+end;
 
 procedure TfrmPrincipal.menuCadSairClick(Sender: TObject);
 begin
