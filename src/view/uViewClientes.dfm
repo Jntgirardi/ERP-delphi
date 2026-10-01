@@ -45,6 +45,7 @@ object frmClientes: TfrmClientes
       Align = alLeft
       Caption = 'Novo'
       TabOrder = 0
+      ExplicitLeft = 24
     end
     object btnEditar: TButton
       Left = 80
@@ -98,7 +99,7 @@ object frmClientes: TfrmClientes
     Top = 50
     Width = 750
     Height = 400
-    ActivePage = tabConsulta
+    ActivePage = tabDados
     Align = alClient
     TabOrder = 2
     object tabConsulta: TTabSheet
@@ -153,15 +154,86 @@ object frmClientes: TfrmClientes
     object tabDados: TTabSheet
       Caption = #55357#56541' Dados do Cliente'
       ImageIndex = 1
+      object lblID: TLabel
+        Left = 24
+        Top = 20
+        Width = 42
+        Height = 15
+        Caption = 'C'#243'digo:'
+      end
+      object lblNome: TLabel
+        Left = 24
+        Top = 67
+        Width = 100
+        Height = 15
+        Caption = 'Nome Completo: *'
+      end
+      object lblCpfCnpj: TLabel
+        Left = 24
+        Top = 130
+        Width = 62
+        Height = 15
+        Caption = 'CPF / CNPJ:'
+      end
+      object lblTelefone: TLabel
+        Left = 240
+        Top = 130
+        Width = 48
+        Height = 15
+        Caption = 'Telefone:'
+      end
+      object lblEmail: TLabel
+        Left = 24
+        Top = 185
+        Width = 37
+        Height = 15
+        Caption = 'E-mail:'
+      end
+      object edtID: TEdit
+        Left = 24
+        Top = 38
+        Width = 80
+        Height = 23
+        Enabled = False
+        TabOrder = 0
+      end
+      object edtNome: TEdit
+        Left = 24
+        Top = 88
+        Width = 450
+        Height = 23
+        TabOrder = 1
+      end
+      object edtCpfCnpj: TEdit
+        Left = 24
+        Top = 148
+        Width = 200
+        Height = 23
+        TabOrder = 2
+      end
+      object edtTelefone: TEdit
+        Left = 240
+        Top = 148
+        Width = 234
+        Height = 23
+        TabOrder = 3
+      end
+      object edtEmail: TEdit
+        Left = 24
+        Top = 203
+        Width = 450
+        Height = 23
+        TabOrder = 4
+      end
     end
   end
   object qryClientes: TFDQuery
-    Left = 368
-    Top = 256
+    Left = 328
+    Top = 320
   end
   object dcClientes: TDataSource
     DataSet = qryClientes
-    Left = 400
-    Top = 256
+    Left = 384
+    Top = 320
   end
 end

@@ -30,6 +30,16 @@ type
     dbgClientes: TDBGrid;
     qryClientes: TFDQuery;
     dcClientes: TDataSource;
+    lblID: TLabel;
+    edtID: TEdit;
+    lblNome: TLabel;
+    edtNome: TEdit;
+    lblCpfCnpj: TLabel;
+    edtCpfCnpj: TEdit;
+    lblTelefone: TLabel;
+    edtTelefone: TEdit;
+    lblEmail: TLabel;
+    edtEmail: TEdit;
     procedure btnFecharClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure bntFiltrarClick(Sender: TObject);
