@@ -132,6 +132,7 @@ object frmClientes: TfrmClientes
           Height = 25
           Caption = #55357#56589' Pesquisar'
           TabOrder = 1
+          OnClick = bntFiltrarClick
         end
       end
       object dbgClientes: TDBGrid

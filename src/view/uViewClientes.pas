@@ -32,6 +32,7 @@ type
     dcClientes: TDataSource;
     procedure btnFecharClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure bntFiltrarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,6 +46,14 @@ implementation
 
 {$R *.dfm}
 
+
+procedure TfrmClientes.bntFiltrarClick(Sender: TObject);
+begin
+  qryClientes.Close;
+  qryClientes.SQL.Text := 'SELECT * FROM CLIENTES WHERE NOME LIKE :NOME ORDER BY NOME';
+  qryClientes.ParamByName('NOME').AsString := '%' + Trim(edtPesquisa.Text) + '%';
+  qryClientes.Open;
+end;
 
 procedure TfrmClientes.btnFecharClick(Sender: TObject);
 begin
