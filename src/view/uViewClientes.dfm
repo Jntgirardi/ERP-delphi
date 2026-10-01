@@ -56,6 +56,7 @@ object frmClientes: TfrmClientes
       Align = alLeft
       Caption = 'Editar'
       TabOrder = 1
+      OnClick = btnEditarClick
     end
     object btnSalvar: TButton
       Left = 160
@@ -102,7 +103,7 @@ object frmClientes: TfrmClientes
     Top = 50
     Width = 750
     Height = 400
-    ActivePage = tabDados
+    ActivePage = tabConsulta
     Align = alClient
     TabOrder = 2
     object tabConsulta: TTabSheet
@@ -152,6 +153,7 @@ object frmClientes: TfrmClientes
         TitleFont.Height = -12
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
+        OnDblClick = btnEditarClick
       end
     end
     object tabDados: TTabSheet

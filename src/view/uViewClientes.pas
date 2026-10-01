@@ -46,6 +46,7 @@ type
     procedure btnNovoClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
+    procedure btnEditarClick(Sender: TObject);
   private
     { Private declarations }
     procedure LimparCampos;
@@ -73,6 +74,25 @@ procedure TfrmClientes.btnCancelarClick(Sender: TObject);
 begin
   LimparCampos;
   pgcPrincipal.ActivePage := tabConsulta;
+end;
+
+procedure TfrmClientes.btnEditarClick(Sender: TObject);
+begin
+  // 1. Verifica se a consulta tem algum registro selecionado
+  if qryClientes.IsEmpty then
+  begin
+    ShowMessage('Selecione um cliente na lista para editar.');
+    Exit;
+  end;
+  // 2. Carrega os dados da linha selecionada para os campos da tela
+  edtID.Text       := qryClientes.FieldByName('ID').AsString;
+  edtNome.Text     := qryClientes.FieldByName('NOME').AsString;
+  edtCpfCnpj.Text  := qryClientes.FieldByName('CPF_CNPJ').AsString;
+  edtTelefone.Text := qryClientes.FieldByName('TELEFONE').AsString;
+  edtEmail.Text    := qryClientes.FieldByName('EMAIL').AsString;
+  // 3. Muda para a aba de dados e foca no nome
+  pgcPrincipal.ActivePage := tabDados;
+  edtNome.SetFocus;
 end;
 
 procedure TfrmClientes.btnFecharClick(Sender: TObject);
