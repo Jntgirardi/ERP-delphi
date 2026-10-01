@@ -36,7 +36,6 @@ object frmClientes: TfrmClientes
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitTop = 452
     object btnNovo: TButton
       Left = 0
       Top = 0
@@ -63,9 +62,6 @@ object frmClientes: TfrmClientes
       Align = alLeft
       Caption = 'Salvar'
       TabOrder = 2
-      ExplicitLeft = 336
-      ExplicitTop = 16
-      ExplicitHeight = 25
     end
     object btnCancelar: TButton
       Left = 240
@@ -94,9 +90,6 @@ object frmClientes: TfrmClientes
       Caption = 'Fechar'
       TabOrder = 5
       OnClick = btnFecharClick
-      ExplicitLeft = 336
-      ExplicitTop = 16
-      ExplicitHeight = 25
     end
   end
   object pgcPrincipal: TPageControl
@@ -104,11 +97,55 @@ object frmClientes: TfrmClientes
     Top = 50
     Width = 750
     Height = 400
-    ActivePage = tabDados
+    ActivePage = tabConsulta
     Align = alClient
     TabOrder = 2
     object tabConsulta: TTabSheet
       Caption = #55357#56589' Consulta / Pesquisa'
+      object pnlFiltro: TPanel
+        Left = 0
+        Top = 0
+        Width = 742
+        Height = 55
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 0
+        object Label1: TLabel
+          Left = 16
+          Top = 6
+          Width = 114
+          Height = 15
+          Caption = 'Pesquisar por Nome:'
+        end
+        object edtPesquisa: TEdit
+          Left = 16
+          Top = 24
+          Width = 350
+          Height = 25
+          TabOrder = 0
+        end
+        object bntFiltrar: TButton
+          Left = 376
+          Top = 24
+          Width = 100
+          Height = 25
+          Caption = #55357#56589' Pesquisar'
+          TabOrder = 1
+        end
+      end
+      object dbgClientes: TDBGrid
+        Left = 0
+        Top = 55
+        Width = 742
+        Height = 315
+        Align = alClient
+        TabOrder = 1
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -12
+        TitleFont.Name = 'Segoe UI'
+        TitleFont.Style = []
+      end
     end
     object tabDados: TTabSheet
       Caption = #55357#56541' Dados do Cliente'
