@@ -47,6 +47,7 @@ type
     procedure btnCancelarClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure btnEditarClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
   private
     { Private declarations }
     procedure LimparCampos;
@@ -93,6 +94,37 @@ begin
   // 3. Muda para a aba de dados e foca no nome
   pgcPrincipal.ActivePage := tabDados;
   edtNome.SetFocus;
+end;
+
+procedure TfrmClientes.btnExcluirClick(Sender: TObject);
+var
+  vID: Integer;
+begin
+  // 1. Descobre o ID: se estiver na aba de dados (edtID) ou pela linha selecionada na grid
+  if Trim(edtID.Text) <> '' then
+    vID := StrToInt(edtID.Text)
+  else if not qryClientes.IsEmpty then
+    vID := qryClientes.FieldByName('ID').AsInteger
+  else
+  begin
+    ShowMessage('Selecione um cliente na lista para excluir.');
+    Exit;
+  end;
+
+  // 2. Pede confirmação nativa do Windows (Sim / Não)
+  if Application.MessageBox('Deseja realmente excluir este cliente?', 'Confirmação', MB_YESNO + MB_ICONQUESTION) = IDYES then
+  begin
+    // 3. Executa o DELETE com parâmetro seguro
+    dmConexao.FDConn.ExecSQL('DELETE FROM CLIENTES WHERE ID = :ID', [vID]);
+
+    // 4. Limpa os edits, recarrega a consulta e volta para a aba de pesquisa
+    LimparCampos;
+    qryClientes.Close;
+    qryClientes.Open;
+    pgcPrincipal.ActivePage := tabConsulta;
+
+    ShowMessage('Cliente excluído com sucesso!');
+  end;
 end;
 
 procedure TfrmClientes.btnFecharClick(Sender: TObject);

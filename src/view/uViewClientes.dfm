@@ -86,6 +86,9 @@ object frmClientes: TfrmClientes
       Align = alLeft
       Caption = 'Excluir'
       TabOrder = 4
+      OnClick = btnExcluirClick
+      ExplicitLeft = 326
+      ExplicitTop = 2
     end
     object btnFechar: TButton
       Left = 670
@@ -103,7 +106,7 @@ object frmClientes: TfrmClientes
     Top = 50
     Width = 750
     Height = 400
-    ActivePage = tabConsulta
+    ActivePage = tabDados
     Align = alClient
     TabOrder = 2
     object tabConsulta: TTabSheet
