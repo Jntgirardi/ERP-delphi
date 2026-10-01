@@ -4,7 +4,11 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ExtCtrls, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ExtCtrls, Vcl.StdCtrls,
+  Data.DB, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  Vcl.Grids, Vcl.DBGrids;
 
 type
   TfrmProdutos = class(TForm)
@@ -19,6 +23,13 @@ type
     btnCancelar: TButton;
     btnExcluir: TButton;
     btnFechar: TButton;
+    pnlFiltro: TPanel;
+    Label1: TLabel;
+    edtPesquisa: TEdit;
+    btnFiltrar: TButton;
+    dbgProdutos: TDBGrid;
+    qryProdutos: TFDQuery;
+    dcProdutos: TDataSource;
   private
     { Private declarations }
   public

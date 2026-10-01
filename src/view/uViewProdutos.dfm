@@ -99,15 +99,69 @@ object frmProdutos: TfrmProdutos
     Top = 50
     Width = 750
     Height = 400
-    ActivePage = tabDados
+    ActivePage = tabConsulta
     Align = alClient
     TabOrder = 2
     object tabConsulta: TTabSheet
       Caption = #55357#56589' Consulta / Pesquisa'
+      object pnlFiltro: TPanel
+        Left = 0
+        Top = 0
+        Width = 742
+        Height = 55
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 0
+        object Label1: TLabel
+          Left = 16
+          Top = 6
+          Width = 128
+          Height = 15
+          Caption = 'Pesquisar por Descri'#231#227'o:'
+        end
+        object edtPesquisa: TEdit
+          Left = 16
+          Top = 24
+          Width = 350
+          Height = 23
+          TabOrder = 0
+        end
+        object btnFiltrar: TButton
+          Left = 376
+          Top = 24
+          Width = 100
+          Height = 25
+          Caption = #55357#56589' Pesquisar'
+          TabOrder = 1
+        end
+      end
+      object dbgProdutos: TDBGrid
+        Left = 0
+        Top = 55
+        Width = 742
+        Height = 315
+        Align = alClient
+        DataSource = dcProdutos
+        TabOrder = 1
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -12
+        TitleFont.Name = 'Segoe UI'
+        TitleFont.Style = []
+      end
     end
     object tabDados: TTabSheet
       Caption = #55357#56541' Dados do Produto'
       ImageIndex = 1
     end
+  end
+  object qryProdutos: TFDQuery
+    Left = 312
+    Top = 256
+  end
+  object dcProdutos: TDataSource
+    DataSet = qryProdutos
+    Left = 376
+    Top = 264
   end
 end
