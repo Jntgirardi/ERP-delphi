@@ -30,6 +30,18 @@ type
     dbgProdutos: TDBGrid;
     qryProdutos: TFDQuery;
     dcProdutos: TDataSource;
+    Label2: TLabel;
+    edtID: TEdit;
+    Label3: TLabel;
+    edtCodigoBarras: TEdit;
+    Label4: TLabel;
+    edtDescricao: TEdit;
+    Label5: TLabel;
+    edtPrecoCusto: TEdit;
+    Label6: TLabel;
+    edtPrecoVenda: TEdit;
+    Label7: TLabel;
+    edtEstoque: TEdit;
   private
     { Private declarations }
   public

@@ -99,7 +99,7 @@ object frmProdutos: TfrmProdutos
     Top = 50
     Width = 750
     Height = 400
-    ActivePage = tabConsulta
+    ActivePage = tabDados
     Align = alClient
     TabOrder = 2
     object tabConsulta: TTabSheet
@@ -153,15 +153,103 @@ object frmProdutos: TfrmProdutos
     object tabDados: TTabSheet
       Caption = #55357#56541' Dados do Produto'
       ImageIndex = 1
+      object Label2: TLabel
+        Left = 24
+        Top = 20
+        Width = 64
+        Height = 15
+        Caption = 'C'#243'digo (ID):'
+      end
+      object Label3: TLabel
+        Left = 120
+        Top = 20
+        Width = 125
+        Height = 15
+        Caption = 'C'#243'digo de Barras / SKU:'
+      end
+      object Label4: TLabel
+        Left = 24
+        Top = 80
+        Width = 122
+        Height = 15
+        Caption = 'Descri'#231#227'o do Produto:*'
+      end
+      object Label5: TLabel
+        Left = 24
+        Top = 140
+        Width = 107
+        Height = 15
+        Caption = 'Pre'#231'o de Custo (R$):'
+      end
+      object Label6: TLabel
+        Left = 160
+        Top = 140
+        Width = 113
+        Height = 15
+        Caption = 'Pre'#231'o de Venda (R$):*'
+      end
+      object Label7: TLabel
+        Left = 296
+        Top = 140
+        Width = 76
+        Height = 15
+        Caption = 'Estoque Atual:'
+      end
+      object edtID: TEdit
+        Left = 24
+        Top = 40
+        Width = 80
+        Height = 23
+        Enabled = False
+        TabOrder = 0
+      end
+      object edtCodigoBarras: TEdit
+        Left = 120
+        Top = 40
+        Width = 200
+        Height = 23
+        TabOrder = 1
+      end
+      object edtDescricao: TEdit
+        Left = 24
+        Top = 100
+        Width = 550
+        Height = 23
+        TabOrder = 2
+      end
+      object edtPrecoCusto: TEdit
+        Left = 24
+        Top = 160
+        Width = 120
+        Height = 23
+        TabOrder = 3
+        Text = '0,00'
+      end
+      object edtPrecoVenda: TEdit
+        Left = 160
+        Top = 160
+        Width = 120
+        Height = 23
+        TabOrder = 4
+        Text = '0,00'
+      end
+      object edtEstoque: TEdit
+        Left = 296
+        Top = 160
+        Width = 120
+        Height = 23
+        TabOrder = 5
+        Text = '0'
+      end
     end
   end
   object qryProdutos: TFDQuery
-    Left = 312
-    Top = 256
+    Left = 320
+    Top = 304
   end
   object dcProdutos: TDataSource
     DataSet = qryProdutos
     Left = 376
-    Top = 264
+    Top = 304
   end
 end
