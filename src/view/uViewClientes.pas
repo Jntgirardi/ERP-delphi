@@ -43,8 +43,11 @@ type
     procedure btnFecharClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure bntFiltrarClick(Sender: TObject);
+    procedure btnNovoClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
   private
     { Private declarations }
+    procedure LimparCampos;
   public
     { Public declarations }
   end;
@@ -65,9 +68,22 @@ begin
   qryClientes.Open;
 end;
 
+procedure TfrmClientes.btnCancelarClick(Sender: TObject);
+begin
+  LimparCampos;
+  pgcPrincipal.ActivePage := tabConsulta;
+end;
+
 procedure TfrmClientes.btnFecharClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmClientes.btnNovoClick(Sender: TObject);
+begin
+  LimparCampos;
+  pgcPrincipal.ActivePage := tabDados;
+  edtNome.SetFocus;
 end;
 
 procedure TfrmClientes.FormShow(Sender: TObject);
@@ -79,6 +95,15 @@ begin
 
   // Abre os dados
   qryClientes.Open('SELECT * FROM CLIENTES ORDER BY NOME');
+end;
+
+procedure TfrmClientes.LimparCampos;
+begin
+  edtID.Clear;
+  edtNome.Clear;
+  edtCpfCnpj.Clear;
+  edtTelefone.Clear;
+  edtEmail.Clear;
 end;
 
 end.

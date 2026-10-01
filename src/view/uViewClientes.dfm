@@ -45,6 +45,7 @@ object frmClientes: TfrmClientes
       Align = alLeft
       Caption = 'Novo'
       TabOrder = 0
+      OnClick = btnNovoClick
       ExplicitLeft = 24
     end
     object btnEditar: TButton
@@ -73,6 +74,7 @@ object frmClientes: TfrmClientes
       Align = alLeft
       Caption = 'Cancelar'
       TabOrder = 3
+      OnClick = btnCancelarClick
     end
     object btnExcluir: TButton
       Left = 320
