@@ -5,7 +5,10 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Data.DB, Vcl.Grids, Vcl.DBGrids;
+  Data.DB, Vcl.Grids, Vcl.DBGrids, uDMConexao, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
 
 type
   TfrmClientes = class(TForm)
@@ -25,7 +28,10 @@ type
     edtPesquisa: TEdit;
     bntFiltrar: TButton;
     dbgClientes: TDBGrid;
+    qryClientes: TFDQuery;
+    dcClientes: TDataSource;
     procedure btnFecharClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,9 +45,21 @@ implementation
 
 {$R *.dfm}
 
+
 procedure TfrmClientes.btnFecharClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmClientes.FormShow(Sender: TObject);
+begin
+  pgcPrincipal.ActivePage := tabConsulta;
+
+  // Liga o SQL na conexão com o SQLite
+  qryClientes.Connection := dmConexao.FDConn;
+
+  // Abre os dados
+  qryClientes.Open('SELECT * FROM CLIENTES ORDER BY NOME');
 end;
 
 end.

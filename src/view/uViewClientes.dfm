@@ -11,6 +11,7 @@ object frmClientes: TfrmClientes
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnShow = FormShow
   TextHeight = 15
   object pnlTop: TPanel
     Left = 0
@@ -139,6 +140,7 @@ object frmClientes: TfrmClientes
         Width = 742
         Height = 315
         Align = alClient
+        DataSource = dcClientes
         TabOrder = 1
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
@@ -151,5 +153,14 @@ object frmClientes: TfrmClientes
       Caption = #55357#56541' Dados do Cliente'
       ImageIndex = 1
     end
+  end
+  object qryClientes: TFDQuery
+    Left = 368
+    Top = 256
+  end
+  object dcClientes: TDataSource
+    DataSet = qryClientes
+    Left = 400
+    Top = 256
   end
 end
