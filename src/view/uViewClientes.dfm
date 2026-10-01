@@ -65,6 +65,7 @@ object frmClientes: TfrmClientes
       Align = alLeft
       Caption = 'Salvar'
       TabOrder = 2
+      OnClick = btnSalvarClick
     end
     object btnCancelar: TButton
       Left = 240

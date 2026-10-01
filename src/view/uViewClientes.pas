@@ -45,6 +45,7 @@ type
     procedure bntFiltrarClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
   private
     { Private declarations }
     procedure LimparCampos;
@@ -84,6 +85,49 @@ begin
   LimparCampos;
   pgcPrincipal.ActivePage := tabDados;
   edtNome.SetFocus;
+end;
+
+procedure TfrmClientes.btnSalvarClick(Sender: TObject);
+begin
+  // 1. Validação básica obrigatória
+  if Trim(edtNome.Text) = '' then
+  begin
+    ShowMessage('Por favor, informe o Nome Completo do cliente.');
+    edtNome.SetFocus;
+    Exit;
+  end;
+
+  // 2. Verifica se é Inclusão (novo) ou Alteração (editar)
+  if Trim(edtID.Text) = '' then
+  begin
+    // INSERT - Novo Cliente
+    dmConexao.FDConn.ExecSQL(
+      'INSERT INTO CLIENTES (NOME, CPF_CNPJ, TELEFONE, EMAIL) ' +
+      'VALUES (:NOME, :CPF_CNPJ, :TELEFONE, :EMAIL)',
+      [Trim(edtNome.Text), Trim(edtCpfCnpj.Text), Trim(edtTelefone.Text), Trim(edtEmail.Text)]
+    );
+    ShowMessage('Cliente cadastrado com sucesso!');
+  end
+  else
+  begin
+    // UPDATE - Atualizar Cliente Existente
+    dmConexao.FDConn.ExecSQL(
+      'UPDATE CLIENTES SET ' +
+      '  NOME = :NOME, ' +
+      '  CPF_CNPJ = :CPF_CNPJ, ' +
+      '  TELEFONE = :TELEFONE, ' +
+      '  EMAIL = :EMAIL ' +
+      'WHERE ID = :ID',
+      [Trim(edtNome.Text), Trim(edtCpfCnpj.Text), Trim(edtTelefone.Text), Trim(edtEmail.Text), StrToInt(edtID.Text)]
+    );
+    ShowMessage('Cliente atualizado com sucesso!');
+  end;
+
+  // 3. Atualiza a tabela na tela e volta para a consulta
+  LimparCampos;
+  qryClientes.Close;
+  qryClientes.Open;
+  pgcPrincipal.ActivePage := tabConsulta;
 end;
 
 procedure TfrmClientes.FormShow(Sender: TObject);
